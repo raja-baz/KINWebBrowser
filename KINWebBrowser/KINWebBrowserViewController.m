@@ -443,14 +443,11 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
 
 - (void)actionButtonPressed:(id)sender {
     NSURL *URLForActivityItem;
-    NSString *URLTitle;
     if(self.wkWebView) {
         URLForActivityItem = self.wkWebView.URL;
-        URLTitle = self.wkWebView.title;
     }
     else if(self.uiWebView) {
         URLForActivityItem = self.uiWebView.request.URL;
-        URLTitle = [self.uiWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
     }
     if (!URLForActivityItem) {
         // This happens if the webpage doesn't get loaded due to a connection issue
